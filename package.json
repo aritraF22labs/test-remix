@@ -5,15 +5,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"make sure you set the vercel build output dir to public/build; the 'vercel-build' command will run in prod and deploy to vercel \"",
+    "vercel-build": "vite build && vite build --ssr",
+    "dev": "node server.js",
+    "start": "cross-env NODE_ENV=production node ./api/server.mjs",
+    "typecheck": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@remix-run/express": "^2.8.1",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
-    "@remix-run/serve": "^2.8.1",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.3",
     "isbot": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
